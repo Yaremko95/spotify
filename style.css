@@ -1,0 +1,154 @@
+#header{
+    border-bottom: 1px solid #d9dadc;
+    text-align: center;
+}
+
+.logo {
+    max-width: 200px;
+}
+
+#fb{
+
+color: #FFFFFF;
+background-color: #3b5998;
+padding: 16px 14px 18px;
+width: 450px;
+height: 48px;
+margin-bottom: 0;
+font-weight: 700;
+text-align: center;
+vertical-align: middle;
+touch-action: manipulation;
+cursor: pointer;
+border: 1px solid transparent;
+font-size: 14px;
+line-height: 1;
+border-radius: 500px;
+transition-property: background-color,border-color,color,box-shadow,filter;
+transition-duration: .3s;
+border-width: 0;
+letter-spacing: 2px;
+min-width: 160px;
+text-transform: uppercase;
+white-space: normal;
+
+}
+
+#apple{
+color: #FFFFFF;
+background-color: #000000;
+padding: 16px 14px 18px;
+width: 450px;
+height: 48px;
+font: 14px;
+margin-bottom: 0;
+font-weight: 700;
+text-align: center;
+vertical-align: middle;
+touch-action: manipulation;
+cursor: pointer;
+border: 1px solid transparent;
+font-size: 14px;
+line-height: 1;
+border-radius: 500px;
+transition-property: background-color,border-color,color,box-shadow,filter;
+transition-duration: .3s;
+border-width: 0;
+letter-spacing: 2px;
+min-width: 160px;
+text-transform: uppercase;
+white-space: normal;
+}
+
+#OR {
+    border-top: 1px solid #d9dadc;
+    display: block;
+    line-height: 1px;
+
+}
+
+#OR strong {
+background: #fff;
+font-size: 12px;
+letter-spacing: 1px;
+padding: 0 20px;
+text-transform: uppercase;
+}
+
+#log{
+color: #FFFFFF;
+background-color: #1DB954;
+padding: 16px 14px 18px;
+width: 450px;
+height: 48px;
+font: 14px;
+margin-bottom: 0;
+font-weight: 700;
+text-align: center;
+vertical-align: middle;
+touch-action: manipulation;
+cursor: pointer;
+border: 1px solid transparent;
+font-size: 14px;
+line-height: 1;
+border-radius: 500px;
+transition-property: background-color,border-color,color,box-shadow,filter;
+border-width: 0;
+letter-spacing: 2px;
+min-width: 160px;
+text-transform: uppercase;
+white-space: normal;
+
+}
+
+#signup:hover {
+    color: white;
+    background-color: #616467;
+}
+
+#signup {
+color: #616467;
+box-shadow: inset 0 0 0 2px #616467;
+background-color: transparent;
+padding: 16px 14px 18px;
+width: 450px;
+height: 48px;
+margin-bottom: 0;
+font-weight: 700;
+text-align: center;
+vertical-align: middle;
+touch-action: manipulation;
+cursor: pointer;
+border: 1px solid transparent;
+font-size: 14px;
+line-height: 1;
+border-radius: 500px;
+transition-property: background-color,border-color,color,box-shadow,filter;
+transition-duration: .3s;
+border-width: 0;
+letter-spacing: 2px;
+min-width: 160px;
+text-transform: uppercase;
+white-space: normal;
+}
+
+footer {
+    font-size: 0.7em;
+    color: #c1c3c6;
+}
+
+footer a {
+    font-size: 11.2px;
+    color: #1DB954;
+}
+
+#checkbox1{
+    height: 23px;
+    width: 23px;
+}
+
+
+#reg {
+    border-bottom: 1px solid #d9dadc;
+    border-top: 1px solid #d9dadc;
+}

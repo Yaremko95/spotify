@@ -1,0 +1,270 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+    <title>Spotify Home</title>
+    <link rel="stylesheet" href="./css/style.css">
+  </head>
+  <style>
+      body{
+          background-image: url('./assets/image.jpg');
+          background-size: cover;
+        	background-repeat: no-repeat;
+          background-attachment: fixed;
+          background-position:center;
+          color: whitesmoke;}
+     
+      
+
+  </style>
+  <body>
+    <div class="conatiner-fluid home-content">
+      <div class="row w-100 ml-0 mr-0">
+        <nav class="col-sm-3 col-md-3 col-lg-2 d-none d-md-block  sidebar">
+          <div class="sidebar-sticky d-flex   flex-column justify-content-between" style="position: sticky; top: 0;height: 95vh;align-content:space-between">
+            
+           <div class="col">
+              <ul class="nav flex-column justify-content-center  mb-3  mb-auto">
+                  <li class="nav-item mt-2  w-100 justify-content-center align-items-center">
+                    <img name="encore" src="./assets/Spotify_Logo_RGB_White.png"  class="image-fluid img-thumbnail border-0 rounded-0" width="80%" alt="">
+                  </li>
+                  <li class="mt-3  nav-item active"><a  href="#"><i class="fa fa-home mr-3"></i>Home</a></li>
+                  <li class="mt-3  nav-item"><a href="#"><i class="fa fa-search mr-3"></i>Search</a></li>
+                  <li class="mt-3  nav-item"><a href="#"><i class="fa fa-book  mr-3"></i>Your Library</a></li>
+                  
+                </ul>
+           </div>
+         <div class="col d-flex flex-column w-100">
+                <ul class="nav flex-column justify-content-center align-items-center w-100 mt-auto pb-5">
+                  <li class="nav-item w-100 mb-3">
+                      <button type="button" class="btn btn-light  w-100 rounded-pill" style="font-weight:500;">SIGN UP</button>
+                  </li>
+                  <li class="nav-item w-100 mb-2">
+                     <button type="button" onclick="goToLogin()" class="btn btn-secondary w-100 rounded-pill" style="background-color: black; color: whitesmoke; border: 1px solid white; font-weight: 500;">LOGIN</button>
+                  </li>
+                  <li class="nav-item">
+                    <small class="mr-2">Cookie</small>|<small class="ml-2">Privacy Policy</small>
+                  </li>
+                 
+                </ul>
+         </div>
+            </div>
+              
+        </nav>
+    
+       
+           <div class="col-sm-9 col-md-9 col-lg-10 pb-sm-4" >
+              <nav class="navbar navbar-expand-lg navbar-light   pt-3 mb-3">
+                 
+                  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+                
+                 <div class="d-flex align-items-center m-auto">
+                      <div class="collapse navbar-collapse " id="navbarSupportedContent">
+                        <ul class="navbar-nav m-auto ">
+                          <li class="nav-item active mr-3">
+                            <a class="nav-link bolder" href="#">Trending <span class="sr-only">(current)</span></a>
+                          </li>
+                          <li class="nav-item mr-3">
+                            <a class="nav-link bolder" href="#">Podcast</a>
+                          </li>
+                         
+                          <li class="nav-item mr-3">
+                            <a class="nav-link bolder" href="#" >Moods and genres</a>
+                          </li>
+                          <li class="nav-item mr-3">
+                              <a class="nav-link bolder" href="#" >New Releases</a>
+                            </li>
+                            <li class="nav-item mr-3">
+                              <a class="nav-link bolder" href="#" >Discover</a>
+                            </li>
+                        </ul>
+                       
+                      </div>
+                 </div>
+                </nav>
+              
+             <div class="container" style="max-width:1400px;">
+             <div class=" d-flex flex-wrap row">
+                <h3 class=" mt-5 mb-3 w-50 ml-3">#throwbackthursday</h3>
+             </div>
+              <div class="row albums-container-home mb-5 row-cols-1 row-cols-md-4 row-cols-lg-6">
+                <div class="col d-flex flex-column align-items-center mb-3">
+                  <a>
+                      <div class="albumsName">
+                        <img name="queen2" src="./assets/Lyricist.png" alt="..." class="img-thumbnail p-0 border-0 rounded-0">
+                        <i style="font-size: 2.5rem; position: absolute; top:40%; left:40%; color: white; z-index:20; "  class="fa fa-play-circle d-none"></i>
+                      </div>
+                  </a>
+                  <span class="mt-1 text-center bolder">Italian Karaoke</span>
+                </div>
+                <div class="col d-flex flex-column align-items-center mb-3">
+                  <a href="#">
+                      <div class="albumsName">
+                        <img name="encore" src="./assets/karaokeitaliano.png" alt="..." class="img-thumbnail p-0 border-0 rounded-0">
+                        <i style="font-size: 2.5rem; position: absolute; top:40%; left:40%; color: white; z-index:20; "  class="fa fa-play-circle d-none"></i>
+                      </div>
+                  </a>
+                  <span class="mt-1 text-center bolder">Lyricists</span>
+                </div>
+                <div class="col d-flex flex-column align-items-center mb-3">
+                  <a href="#">
+                      <div class="albumsName">
+                        <img name="encore" src="./assets/italys.png" alt="..." class="img-thumbnail p-0 border-0 rounded-0">
+                        <i style="font-size: 2.5rem; position: absolute; top:40%; left:40%; color: white; z-index:20; "  class="fa fa-play-circle d-none"></i>
+                      </div>
+                  </a>
+                  <span class="mt-1 text-center bolder">Italy's Frequent Rotation</span>
+                </div>
+                <div class="col d-flex flex-column align-items-center mb-3">
+                  <a href="#">
+                      <div class="albumsName">
+                        <img name="encore" src="./assets/00.png" alt="..." class="img-thumbnail p-0 border-0 rounded-0">
+                        <i style="font-size: 2.5rem; position: absolute; top:40%; left:40%; color: white; z-index:20; "  class="fa fa-play-circle d-none"></i>
+                      </div>
+                  </a>
+                  <span class="mt-1 text-center bolder">00s Italy</span>
+                </div>
+                <div class="col d-flex flex-column align-items-center mb-3">
+                  <a href="#">
+                      <div class="albumsName">
+                        <img name="encore" src="./assets/cocktail.png" alt="..." class="img-thumbnail p-0 border-0 rounded-0">
+                        <i style="font-size: 2.5rem; position: absolute; top:40%; left:40%; color: white; z-index:20; "  class="fa fa-play-circle d-none"></i>
+                      </div>
+                  </a>
+                  <span class="mt-1 text-center bolder">Cocktail Hour</span>
+                </div>
+                <div class="col d-flex flex-column align-items-center mb-3">
+                  <a href="#">
+                      <div class="albumsName">
+                        <img name="encore" src="./assets/90.png" alt="..." class="img-thumbnail p-0 border-0 rounded-0">
+                        <i style="font-size: 2.5rem; position: absolute; top:40%; left:40%; color: white; z-index:20; "  class="fa fa-play-circle d-none"></i>
+                      </div>
+                  </a>
+                  <span class="mt-1 text-center bolder">I Love My '90's Hip-Hop'</span>
+                </div>
+              </div>
+              <h3 class="w-50 mb-3">Classifiche</h3>
+              <div class="row  row-cols-1 row-cols-md-4 row-cols-lg-6 " id="classic">
+                  <div class="col d-flex flex-column align-items-center mb-3">
+                    <a>
+                        <div class="albumsName">
+                          <img name="queen2" src="./assets/top50.png" alt="..." class="img-thumbnail p-0 border-0 rounded-0">
+                          <i style="font-size: 2.5rem; position: absolute; top:40%; left:40%; color: white; z-index:20; "  class="fa fa-play-circle d-none"></i>
+                        </div>
+                    </a>
+                    <span class="mt-1 text-center bolder">Top 50 - Italy</span>
+                  </div>
+                  <div class="col d-flex flex-column align-items-center mb-3">
+                    <a href="#">
+                        <div class="albumsName">
+                          <img name="encore" src="./assets/top50global.png" alt="..." class="img-thumbnail p-0 border-0 rounded-0">
+                          <i style="font-size: 2.5rem; position: absolute; top:40%; left:40%; color: white; z-index:20; "  class="fa fa-play-circle d-none"></i>
+                        </div>
+                    </a>
+                    <span class="mt-1 text-center bolder">Top 50 - Global</span>
+                  </div>
+                  <div class="col d-flex flex-column align-items-center mb-3">
+                    <a href="#">
+                        <div class="albumsName">
+                          <img name="encore" src="./assets/viral50.png" alt="..." class="img-thumbnail p-0 border-0 rounded-0">
+                          <i style="font-size: 2.5rem; position: absolute; top:40%; left:40%; color: white; z-index:20; "  class="fa fa-play-circle d-none"></i>
+                        </div>
+                    </a>
+                    <span class="mt-1 text-center bolder">Viral 50 - Global</span>
+                  </div>
+                  <div class="col d-flex flex-column align-items-center mb-3">
+                    <a href="#">
+                        <div class="albumsName">
+                          <img name="encore" src="./assets/viral50italy.png" alt="..." class="img-thumbnail p-0 border-0 rounded-0">
+                          <i style="font-size: 2.5rem; position: absolute; top:40%; left:40%; color: white; z-index:20; "  class="fa fa-play-circle d-none"></i>
+                        </div>
+                    </a>
+                    <span class="mt-1 text-center bolder">Viral 50 - Italy</span>
+                  </div>
+                  
+              </div>
+             </div>
+             
+             
+             <div class="navbar fixed-bottom navbar-expand-sm w-100 d-flex justify-content-center ">
+              <div class="row row-cols-1 row-cols-md-1 row-cols-lg-3 w-100 py-1">
+                  <div class="col"></div>
+                  <div class="col d-flex flex-column justify-content-center align-items-center">
+                  
+                     <div class="d-flex  justify-content-center align-items-center mb-1">
+                        <a href="#" class="mr-4" ><i class="fa fa-random"></i></a>
+                        <a href="#" class="mr-4"><i class="fa fa-fast-backward"></i></a>
+                        <a href="#" class="mr-4"><i style="font-size: 2rem;"  class="fa fa-play-circle"></i></a>
+                        <a href="#" class="mr-4"><i class="fa fa-fast-forward"></i></a>
+                        <a href="#" class="mr-4"><i class="fa fa-repeat"></i></a>
+                     </div>
+                     <div class="w-100 d-flex align-items-baseline">
+                       <small class="mr-2">30.00</small>
+                       <div class="progress w-100 mb-2" style="height:0.3rem;">
+                        <div class="progress-bar w-75"  style="background-color:#93A0B0;" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                       </div>
+                       <small class="ml-2">45.00</small>
+                     </div>
+                     <div class="nav-bottom d-flex justify-content-between w-100 d-lg-none d-md-none border-top border-dark pt-2 mt-2">
+                       <a href="albums.html" class="d-flex flex-column text-center"><i class="fa  fa-home " style="font-size: 1.5rem;"></i>Home</a>
+                       <a href="#"class="d-flex flex-column text-center"><i class="fa  fa-search " style="font-size: 1.5rem;"></i>Search</a>
+                       <a href="#" class="d-flex flex-column text-center"><i class="fa   fa-book  " style="font-size: 1.5rem;"></i>Library</a>
+                       <a href="#" class="d-flex flex-column text-center"><i class="fab   fa-spotify" style="font-size: 1.5rem;"></i>Premium</a>
+                    </div>
+                  </div>
+                 
+                  <div class="col d-flex justify-content-end align-items-center mt-2 ">
+                    <a href="#" class="pr-3"><i class=" fa fa-volume-up"></i></a>
+                    <div class="progress w-50" style="height:0.3rem;">
+                      <div class="progress-bar w-75"  style="background-color:#93A0B0;" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>          
+                  </div>
+              </div>
+              
+             </div>
+              
+          </div>
+      </div>
+      
+ 
+    
+
+    <!-- Optional JavaScript -->
+      <script src="./js/script.js"></script>
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+      <script>
+        function goTo() {
+          window.location.href="albums.html"
+        }
+        function goToLogin() {
+          window.location.href="signin.html"
+        }
+          let images=document.querySelectorAll(" .col > a > div")
+                  let play_btn=document.querySelectorAll("img + i")
+                  console.log (play_btn)
+                  images.forEach((image, index) => {
+                    image.addEventListener('mouseover', function() {
+                    
+                      play_btn[index].classList.remove("d-none")
+                    })
+                    image.addEventListener('mouseout', function() {
+                      play_btn[index].classList.add("d-none")
+                    })
+                  });
+           
+       
+      </script>
+  
+  </body>
+</html>
