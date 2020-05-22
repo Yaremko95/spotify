@@ -8,20 +8,17 @@ fetch(`https://deezerdevs-deezer.p.rapidapi.com/search?q=money`, {
 		.then(response => response.json()).then(parsedJSON => { 
         let data=parsedJSON.data
         
-        const firstQuerry = data.filter(element => 
-            element.title.toLowerCase().includes(`money`))
-            firstQuerry.forEach(element => {
-            })
-        const secondQuerry = data.filter(element => 
+        let tracksQuerry = data;
+        const albumQuerry = data.filter(element => 
             element.album.title.toLowerCase().includes(`money`))
-            secondQuerry.forEach(element => {
+            albumQuerry.forEach(element => {
             })
-        const thirdQuerry = data.filter(element => 
-            element.artist.name.toLowerCase().includes(`cardi b`))
-            thirdQuerry.forEach(element => {
+        const artistQuerry = data.filter(element => 
+            element.artist.name.toLowerCase().includes(`money`))
+            artistQuerry.forEach(element => {
                 console.log(element.artist.name)
             })
-            console.log(firstQuerry,secondQuerry,thirdQuerry)
+            console.log(tracksQuerry,albumQuerry,artistQuerry)
     })   
     
         
