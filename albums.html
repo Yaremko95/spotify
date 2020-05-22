@@ -162,34 +162,70 @@ body {
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
         <script>
           window.onload=function() {
-            displayAlbums()
+            displayAlbums('queen')
             
           }
          
 
-           function displayAlbums() {
+           function displayAlbums(artist_name) {
     
-          let parent = document.querySelector ('.albums-container');
-          const array =[];
-          Object.keys(music).forEach(element => {
-              console.log(music[element][0][0].album);
+  //         let parent = document.querySelector ('.albums-container');
+  //         const array =[];
+  //         Object.keys(music).forEach(element => {
+  //             console.log(music[element][0][0].album);
   
-          let child =`
-              <div class="col mb-3 d-flex flex-column justify-content-center align-items-center">
-              <div class="image-wrapper albumsName" id="${music[element][0][0].id}">
-                  <img  src="${music[element][0][0].image}"   class="image-fluid img-thumbnail border-0 p-0 rounded-0"  alt="album ">
-                  <i   class="fa fa-play-circle d-none"></i>
-              </div>
-              <span class="mt-2 text-center" style="color: whitesmoke; font-weight: 500;">${music[element][0][0].album}</span>
-              <span style="color: #93A0B0;">${music[element][0][0].artist}</span>
-              </div>
-    `;
-    array.push (child)
-     });
-   parent.innerHTML=array.join('');
-
-
-              let imageWrapper =document.querySelectorAll('.image-wrapper');
+  //         let child =`
+  //             <div class="col mb-3 d-flex flex-column justify-content-center align-items-center">
+  //             <div class="image-wrapper albumsName" id="${music[element][0][0].id}">
+  //                 <img  src="${music[element][0][0].image}"   class="image-fluid img-thumbnail border-0 p-0 rounded-0"  alt="album ">
+  //                 <i   class="fa fa-play-circle d-none"></i>
+  //             </div>
+  //             <span class="mt-2 text-center" style="color: whitesmoke; font-weight: 500;">${music[element][0][0].album}</span>
+  //             <span style="color: #93A0B0;">${music[element][0][0].artist}</span>
+  //             </div>
+  //   `;
+  //   array.push (child)
+  //    });
+  //  parent.innerHTML=array.join('');
+  fetch(`https://deezerdevs-deezer.p.rapidapi.com/search?q=${artist_name}`, {
+		"method": "GET",
+		"headers": {
+			"x-rapidapi-host": "deezerdevs-deezer.p.rapidapi.com",
+			"x-rapidapi-key": "84d2e1bc2amsh0bcbc81dd32f547p1526bajsncbac98b453bc"
+				}
+		})
+		.then(response => response.json()).then(parsedJSON => { 
+        console.log(parsedJSON)
+        let albumsContainer = document.querySelector ('.albums-container');
+        const filtered =[]
+				const map =new Map();
+									for(const item of parsedJSON.data) {
+										if(!map.has(item.album.title)) {
+											map.set(item.album.title, true)
+											filtered.push({
+                        id:item.album.id,
+												title:item.album.title,
+												cover: item.album.cover_medium,
+												artist:item.artist.name
+											})
+										}
+									}
+        
+        console.log(filtered)
+        filtered.forEach(album => {
+           let cover =`
+               <div class="col mb-3 d-flex flex-column justify-content-center align-items-center">
+                <div class="image-wrapper albumsName">
+                  <a href="playlist.html?albumId=${album.id}"> <img  src="${album.cover}"   class="image-fluid img-thumbnail border-0 p-0 rounded-0"  alt="album ">
+                   <i   class="fa fa-play-circle d-none"></i></a>
+               </div>
+               <span class="mt-2 text-center " style="color: whitesmoke; font-weight: 500;">${album.title}</span>
+               <span style="color: #93A0B0;">${album.artist}</span>
+               </div>
+           `;
+           albumsContainer.innerHTML+=cover;
+        });
+          let imageWrapper =document.querySelectorAll('.image-wrapper');
           let palyBtn = document.querySelectorAll("img + i")
           imageWrapper.forEach((image,index)=> {
             image.addEventListener('mouseover', function(){
@@ -200,17 +236,22 @@ body {
             })
           })
 
-   
-        let x = document.querySelectorAll('.albumsName')
-        x.forEach(element => {
-            element.addEventListener('click',function(s){
+        // let albumCovers = document.querySelectorAll('.albumsName')
+        // albumCovers.forEach((alb,index) => {
+        //     alb.addEventListener('click',function(s){
                
-                clickedAlbum = s.currentTarget.id
-                window.location.href="playlist.html?album=" + s.currentTarget.id
+        //         window.location.href="playlist.html?albumID=" + s.currentTarget.id
                 
-            })
+        //     })
             
-        });
+        //});
+
+    })
+
+  
+
+   
+      
  }
          
         </script>
