@@ -626,11 +626,11 @@ function updatePlayer() {
 
 const initialDefinitions = () => {
   let searchInput = document.getElementById("search-artist");
-  searchInput.onkeypress = function (e) {
-    if (e.key === "Enter") {
-      let value = searchInput.value;
+  searchInput.onkeyup = function (e) {
+    let value = searchInput.value;
+    setTimeout(() => {
       searchSongs(value);
-    }
+    }, 500);
   };
 };
 window.onload = initialDefinitions;
