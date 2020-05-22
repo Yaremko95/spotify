@@ -15,7 +15,11 @@ function searchSongs()
         let containers= document.querySelectorAll('.search-results-section .container-fluid')
         let songsSection = document.querySelector('.songs-search')
         let artistsSection = document.querySelector('.artists-search')
+        let albumSection = document.querySelector('.albums-search')
         let defaultSearch = document.querySelector('.search-default')
+        artistsSection.innerHTML=""
+        albumSection.innerHTML=""
+        songsSection.innerHTML=""
         if(defaultSearch!=null){
         defaultSearch.remove()}
         let tracksQuerry = data;
@@ -27,8 +31,6 @@ function searchSongs()
               
             });
            
-           
-            songsSection.innerHTML=""
             tracksQuerry.forEach((element, index) => {
                 if(index < 8) {
                   
@@ -50,22 +52,41 @@ function searchSongs()
         const artistQuerry = data.filter(element => 
             element.artist.name.toLowerCase().includes(`${input.toLowerCase()}`))
             
-        artistQuerry.forEach(element => {
+        artistQuerry.forEach((element,index) => {
+          if(index < 8) {
               let content = `<div class="col mb-3">
                               <div class="d-flex align-items-center">
                                 <div class="rounded-circle" style="overflow: hidden;">
-                                  <img src="" alt="" style="max-height: 5rem;">
+                                  <img src="${element.artist.picture_small}" alt="" style="max-height: 5rem;">
                                 </div>
                                 <div class="d-flex flex-column pl-2">
                                   <a href="" style="color: whitesmoke;">
-                                    <span>artist</span>
+                                    <span>${element.artist.name}</span>
                                   </a>
                                 </div>
                               </div>
                             </div>`
               artistsSection.innerHTML+=content
-                            console.log(element.artist.name)
+          }
             })
+        albumQuerry.forEach((element,index)=> {
+          if(index < 8) {
+          let content = `<div class="col mb-3">
+          <div class="d-flex">
+            <img src="${element.album.cover_small}" alt="" style="max-height: 5rem;">
+            <div class="d-flex flex-column pl-2">
+              <span>${element.title}</span>
+              <a href="">
+                <small>${element.artist.name}</small>
+              </a>
+            </div>
+          </div>
+        </div>`
+        albumSection.innerHTML += content;
+
+          }
+        
+        })
             console.log(tracksQuerry,albumQuerry,artistQuerry)
     })   
   }
