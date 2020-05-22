@@ -39,6 +39,7 @@ function searchSongs(value) {
           } else {
             const { data } = response;
             let albums = _.uniqBy(data, "title");
+           
             albums.forEach((element, index) => {
               if (index < 8) {
                 let content = `<div class="col mb-3">
@@ -88,8 +89,9 @@ function searchSongs(value) {
         const artistQuerry = data.filter((element) =>
           element.artist.name.toLowerCase().includes(`${value}`)
         );
-
-        artistQuerry.forEach((element, index) => {
+        let uniqueArtist = _.uniqBy(artistQuerry, 'artist.name')
+        console.log(uniqueArtist)
+        uniqueArtist.forEach((element, index) => {
           if (index < 8) {
             let content = `<div class="col mb-3">
                               <div class="d-flex align-items-center">
