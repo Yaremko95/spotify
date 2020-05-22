@@ -24,7 +24,7 @@ function searchSongs()
         defaultSearch.remove()}
         let tracksQuerry = data;
         const albumQuerry = data.filter(element => 
-            element.album.title.toLowerCase().includes(`money`))
+            element.album.title.toLowerCase().includes(`${input.toLowerCase()}`))
             
             containers.forEach(element => {
               element.classList.toggle('d-none')
@@ -39,7 +39,7 @@ function searchSongs()
                                     <img src="${element.album.cover_small}" alt="" style="max-height: 5rem;">
                                     <div class="d-flex flex-column pl-2">
                                       <span>${element.title}</span>
-                                      <a href="">
+                                      <a href="albums.html?artist=${element.artist.name}">
                                         <small>${element.artist.name}</small>
                                       </a>
                                     </div>

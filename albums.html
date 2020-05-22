@@ -55,7 +55,7 @@ body {
                 
                 <div class="d-flex flex-column justify-content-center align-items-center mt-4">
                   <small class="mb-2">33,000,575 MONTHLY LISTENERS</small>
-                  <h2 class=""><b>QUEEN</b></h2>
+                  <h2 class="art-title"><b></b></h2>
                   <div class="d-lg-flex mt-2 d-sm-flex text-center">
                     <button  class="btn  w-75 rounded-pill mx-sm-4 mr-lg-3 mb-2" >PLAY</button>
                     <button class="btn  w-75 rounded-pill  mb-2"  >FOLLOW</button>
@@ -72,7 +72,7 @@ body {
                       <div class="collapse navbar-collapse " id="navbarSupportedContent">
                         <ul class="navbar-nav m-auto ">
                           <li class="nav-item active mr-3">
-                            <a class="nav-link " href="#">OVERVIEW <span class="sr-only">(current)</span></a>
+                            <a class="nav-link  " href="#">OVERVIEW <span class="sr-only">(current)</span></a>
                           </li>
                           <li class="nav-item mr-3">
                             <a class="nav-link " href="#">RELATED ARTISTS</a>
@@ -162,7 +162,12 @@ body {
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
         <script>
           window.onload=function() {
-            displayAlbums('queen')
+            const urlParams = new URLSearchParams(window.location.search); // I'M PARSING THE URL PARAMETERS
+            const artist = urlParams.get("artist") // I'M TAKING THE SPECIFIED PARAMETER'S VALUE
+            let title = document.querySelector('.art-title')
+            title.innerText=artist.toUpperCase()
+            displayAlbums(artist)
+
             
           }
          
