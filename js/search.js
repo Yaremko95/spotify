@@ -2,7 +2,7 @@
 function searchSongs()
  {
   let input =document.querySelector('.search-container .form-control').value.toLowerCase()
-   fetch(`https://deezerdevs-deezer.p.rapidapi.com/search?q=money`, {
+   fetch(`https://deezerdevs-deezer.p.rapidapi.com/search?q=${input.toLowerCase()}`, {
 		"method": "GET",
 		"headers": {
 			"x-rapidapi-host": "deezerdevs-deezer.p.rapidapi.com",
@@ -14,28 +14,24 @@ function searchSongs()
         let section = document.querySelector('.search-results-section')
         let containers= document.querySelectorAll('.search-results-section .container-fluid')
         let songsSection = document.querySelector('.songs-search')
+        let artistsSection = document.querySelector('.artists-search')
         let defaultSearch = document.querySelector('.search-default')
-        
-
+        if(defaultSearch!=null){
+        defaultSearch.remove()}
         let tracksQuerry = data;
         const albumQuerry = data.filter(element => 
             element.album.title.toLowerCase().includes(`money`))
-            defaultSearch.remove()
+            
             containers.forEach(element => {
               element.classList.toggle('d-none')
+              
             });
-            // let loadedBooks=[]
-            //      if(input!='' && input.length>=3) {
-            //        loadedBooks=  data.filter(book=>book.title.toLowerCase().includes(input))
-            //        booksContainer.innerHTML='';
-            //      } else {
-            //          loadedBooks =data
-            //          booksContainer.innerHTML='';
-            //      }
            
-
+           
+            songsSection.innerHTML=""
             tracksQuerry.forEach((element, index) => {
                 if(index < 8) {
+                  
                         let content = `<div class="col mb-3">
                                   <div class="d-flex">
                                     <img src="${element.album.cover_small}" alt="" style="max-height: 5rem;">
@@ -52,9 +48,23 @@ function searchSongs()
           
             })
         const artistQuerry = data.filter(element => 
-            element.artist.name.toLowerCase().includes(`money`))
-            artistQuerry.forEach(element => {
-                console.log(element.artist.name)
+            element.artist.name.toLowerCase().includes(`${input.toLowerCase()}`))
+            
+        artistQuerry.forEach(element => {
+              let content = `<div class="col mb-3">
+                              <div class="d-flex align-items-center">
+                                <div class="rounded-circle" style="overflow: hidden;">
+                                  <img src="" alt="" style="max-height: 5rem;">
+                                </div>
+                                <div class="d-flex flex-column pl-2">
+                                  <a href="" style="color: whitesmoke;">
+                                    <span>artist</span>
+                                  </a>
+                                </div>
+                              </div>
+                            </div>`
+              artistsSection.innerHTML+=content
+                            console.log(element.artist.name)
             })
             console.log(tracksQuerry,albumQuerry,artistQuerry)
     })   
