@@ -7,11 +7,19 @@ fetch(`https://deezerdevs-deezer.p.rapidapi.com/search?q=money`, {
 		})
 		.then(response => response.json()).then(parsedJSON => { 
         let data=parsedJSON.data
-        
+        let section = document.querySelector('.search-results-section')
         let tracksQuerry = data;
         const albumQuerry = data.filter(element => 
             element.album.title.toLowerCase().includes(`money`))
+            section.innerHTML="";
             albumQuerry.forEach(element => {
+                let content = `<div class="col">
+                <div class="d-block my-5 text-center">
+                  <img src="./assets/q1.jpg" class="img-fluid rounded-circle" alt="">
+                  <span class="text-light display-5">Artist Name</span>
+                </div>
+              </div>`
+                let div
             })
         const artistQuerry = data.filter(element => 
             element.artist.name.toLowerCase().includes(`money`))
