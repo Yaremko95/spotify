@@ -223,8 +223,12 @@ body {
       font-weight: 100;
       font-size: 0.7em;
    }
-   #playlistBackground, .search-container {
+   #playlistBackground,  {
     background-color: #282828 !important ;
+  }
+  .search-container {
+    background: rgb(24,24,24);
+    background: linear-gradient(0deg, rgba(24,24,24,1) 0%, rgba(24,24,24,1) 72%, rgba(59,59,59,1) 100%);
   }
   .search-container a {
     color: #B3B3B2;
