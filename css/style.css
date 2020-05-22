@@ -1,4 +1,4 @@
-/* @font-face {
+@font-face {
   font-family: "Circular";
   src: url("https://www.bu.edu/cdn/fonts/Circular/Circular-Bold.eot");
   src: url("https://www.bu.edu/cdn/fonts/Circular/Circular-Bold.eot?#iefix")
@@ -12,7 +12,10 @@
 }
 body {
   font-family: "Circular";
-} */
+  color: whitesmoke;
+}
+
+
 .sidebar {
     background-color: black;
   }
@@ -220,8 +223,11 @@ body {
       font-weight: 100;
       font-size: 0.7em;
    }
-   #playlistBackground {
+   #playlistBackground, .search-container {
     background-color: #282828 !important ;
+  }
+  .search-container a {
+    color: #B3B3B2;
   }
   #playlistBackground .row >div:last-of-type {
     padding: 0 150px;
@@ -281,7 +287,7 @@ body {
         padding-bottom: 4rem;
       }
       .albums-content .row .container,
-      #playlistBackground .row
+      #playlistBackground .row, .albums-search
        {
         padding-bottom: 7rem;
       }
@@ -327,7 +333,7 @@ body {
           width:75% !important;
           font-size: 1rem !important;
         }
-        .home-content .container >h3 +.row {
+        .home-content .container >h3 +.row, .albums-search {
          margin-bottom: 15rem !important;
          }
          /* .sidebar-sticky .col:last-of-type
