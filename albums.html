@@ -168,6 +168,8 @@ body {
             const artist = urlParams.get("artist") // I'M TAKING THE SPECIFIED PARAMETER'S VALUE
             let title = document.querySelector('.art-title')
             title.innerText=artist.toUpperCase()
+            
+            
             displayAlbums(artist)
 
             
@@ -203,6 +205,10 @@ body {
 		})
 		.then(response => response.json()).then(parsedJSON => { 
         console.log(parsedJSON)
+        let jumbotron = document.querySelector('.jumbotron')
+        console.log(jumbotron)
+        // jumbotron.style.backgroundImage  = `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('${parsedJSON.data[1].artist.picture_big}') !important;`
+      
         let albumsContainer = document.querySelector ('.albums-container');
         const filtered =[]
 				const map =new Map();
