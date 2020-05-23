@@ -1,3 +1,5 @@
+let data; 
+let tracksQuerry;
 function searchSongs(value) {
   fetch(`https://deezerdevs-deezer.p.rapidapi.com/search?q=${value}`, {
     method: "GET",
@@ -8,7 +10,8 @@ function searchSongs(value) {
   })
     .then((response) => response.json())
     .then((parsedJSON) => {
-      let data = parsedJSON.data;
+       data = parsedJSON.data;
+
       if (data.length > 0) {
         let section = document.querySelector(".search-results-section");
         let containers = document.querySelectorAll(
@@ -24,7 +27,7 @@ function searchSongs(value) {
         if (defaultSearch != null) {
           defaultSearch.remove();
         }
-        let tracksQuerry = data;
+         tracksQuerry = data.filter(element => element.title.toLowerCase().includes(`${value}`))
 
         //let albums = data.map((song) => song.album);
         //console.log(data);
@@ -67,7 +70,7 @@ function searchSongs(value) {
         );
 
         containers.forEach((element) => {
-          element.classList.toggle("d-none");
+          element.classList.remove("d-none");
         });
 
         tracksQuerry.forEach((element, index) => {
@@ -133,3 +136,38 @@ function getAlbumsOfArtist(id, callback) {
       callback(err, undefined);
     });
 }
+
+function seeMoreSongs (){
+
+    console.log(data)
+    let main = document.querySelector('.search-results-section'),
+    containers = document.querySelectorAll('.search-results-section .container-fluid')
+    containers.forEach((element) => {
+      element.classList.add("d-none");
+    });
+    divRow=document.createElement('div');
+    divRow.className="row pr-5"
+   
+   
+      trackquerry.forEach(element => {
+
+    let content=`
+                <ul class="w-100">
+                <li class="d-flex  mb-3 justify-content-between w-100  border-bottom border-top border-secondary py-3  " style="cursor:pointer">
+                  <div class="d-flex flex-column">
+                    <span class='song-title'><i class="fa fa-music mr-3" ></i>${element.title}</span>
+                    
+                  </div>
+                    <span class="mr-3">${element.duration/100}</span>
+                </li>
+              </ul>`
+  divRow.innerHTML+=content
+
+  
+
+  })
+    main.appendChild(divRow)
+
+
+  }
+ 
