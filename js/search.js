@@ -1,3 +1,5 @@
+let data; 
+let tracksQuerry;
 function searchSongs(value) {
   fetch(`https://deezerdevs-deezer.p.rapidapi.com/search?q=${value}`, {
     method: "GET",
@@ -8,7 +10,8 @@ function searchSongs(value) {
   })
     .then((response) => response.json())
     .then((parsedJSON) => {
-      let data = parsedJSON.data;
+       data = parsedJSON.data;
+
       if (data.length > 0) {
         let section = document.querySelector(".search-results-section");
         let containers = document.querySelectorAll(
@@ -24,7 +27,7 @@ function searchSongs(value) {
         if (defaultSearch != null) {
           defaultSearch.remove();
         }
-        let tracksQuerry = data;
+         tracksQuerry = data.filter(element => element.title.toLowerCase().includes(`${value}`))
 
         //let albums = data.map((song) => song.album);
         //console.log(data);
@@ -67,7 +70,7 @@ function searchSongs(value) {
         );
 
         containers.forEach((element) => {
-          element.classList.toggle("d-none");
+          element.classList.remove("d-none");
         });
 
         tracksQuerry.forEach((element, index) => {
@@ -213,64 +216,36 @@ function getAlbumsOfArtist(id, callback) {
 }
 
 function seeMoreSongs (){
-    searchFetch.then(response => response.json()).then(data => data.data).then(songs => {
-      let main = document.querySelector('.search-results-section'),
-      containers = document.querySelectorAll('.search-results-section .container-fluid')
-      
-      divRow=document.createElement('div');
-      divRow.className="row row-cols-xs-1 row-cols-md-3 row-cols-lg-6"
-      containers.forEach((element) => {
-        element.classList.toggle("d-none");
-      songs.forEach(element => {
 
-      let content=`
-      <div class="col mb-3 text-center">
-        <div class="d-block">
-          <img src="${element.album.cover_medium}" alt="" style="max-height: 12rem;">
-          <div class="d-flex flex-column pl-2">
-            <span>${element.title}</span>
-            <a href="albums.html?artist=${element.artist.name}">
-              <small>${element.artist.name}</small>
-            </a>
-          </div>
-        </div>
-      </div>`;
-    divRow.innerHTML+=content
 
-    
-
-    })
-      main.appendChild(divRow)
-  })
-  
-
-    })}
-function seeMoreAlbums (){
-  searchFetch.then(response => response.json()).then(data => data.data).then(songs => {
+    console.log(data)
     let main = document.querySelector('.search-results-section'),
+    containers = document.querySelectorAll('.search-results-section .container-fluid')
+    containers.forEach((element) => {
+      element.classList.add("d-none");
+    });
     divRow=document.createElement('div');
-    divRow.className="row row-cols-xs-1 row-cols-md-3 row-cols-lg-6"
-    main.innerHTML=""
-    songs.forEach(element => {
+    divRow.className="row pr-5"
+   
+   
+      trackquerry.forEach(element => {
 
     let content=`
-    <div class="col mb-3 text-center">
-      <div class="d-block">
-        <img class="rounded-circle" src="${element.album.cover_medium}" alt="" style="max-height: 10rem;">
-        <div class="d-flex flex-column pl-2">
-          <span>${element.title}</span>
-          <a href="albums.html?artist=${element.artist.name}">
-            <small>${element.artist.name}</small>
-          </a>
-        </div>
-      </div>
-    </div>`;
+                <ul class="w-100">
+                <li class="d-flex  mb-3 justify-content-between w-100  border-bottom border-top border-secondary py-3  " style="cursor:pointer">
+                  <div class="d-flex flex-column">
+                    <span class='song-title'><i class="fa fa-music mr-3" ></i>${element.title}</span>
+                    
+                  </div>
+                    <span class="mr-3">${element.duration/100}</span>
+                </li>
+              </ul>`
   divRow.innerHTML+=content
+
+  
 
   })
     main.appendChild(divRow)
-})
-
 
 
 }
