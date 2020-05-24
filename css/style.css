@@ -282,8 +282,20 @@ body {
     color: whitesmoke; 
     font-weight: 500;
   }
-  
-
+  .see-all-songs .table {
+    color: whitesmoke;
+  }
+  .see-all-songs .table tr {
+    border-bottom: .5px solid rgb(67, 74, 82) ;
+    cursor: pointer;
+  }
+  .see-all-songs .table th {
+    border: none;
+    
+  }
+  .see-all-songs tbody tr:hover {
+    background: rgba(22, 22, 22);
+  }
  
   
     @media screen and (max-width: 768px ) {
