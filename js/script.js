@@ -194,16 +194,16 @@ const fetchAllTracks =(value, index) => {
         .then((response) => response.json())
         .then((json) => {
           console.log(json.total, index)
-          // filteredTracks =_.concat(filteredTracks, json.data.filter(track=>track.title.toLowerCase().includes(`${value}`)))
-          filteredTracks = json.data.filter(track=>track.title.toLowerCase().includes(`${value}`))
+          filteredTracks =_.concat(filteredTracks, json.data.filter(track=>track.title.toLowerCase().includes(`${value}`)))
+          //filteredTracks = json.data.filter(track=>track.title.toLowerCase().includes(`${value}`))
           console.log(filteredTracks)
           if(index<json.total) {
             fetchAllTracks(value, index+=25)
-          // } else {
-            _.uniqBy(filteredTracks, "title", "artist.name").forEach(track => {
+           } else {
+            _.uniqBy(filteredTracks, "artist.name").forEach(track => {
               let content =`
                         <tr>
-                          <th scope="row" style="width:30px"></th>
+                          <th scope="row" style="width:50px"></th>
                           <td ><i class="fa fa-music mr-3" ></i></td>
                           <td>${track.title}</td>
                           <td>${track.artist.name}</td>
