@@ -81,6 +81,8 @@ const fetchTracks=(value, index) => {
           }
 
           
+        }).catch((error) => {
+          console.log(error)
         })
 }
 
@@ -119,7 +121,9 @@ const fetchAlbums=(value, index) => {
                   albumSection.innerHTML += content;
           })
        }
-    })
+    }).catch((error) => {
+			console.log(error)
+		})
 }
 
 
@@ -160,7 +164,9 @@ const fetchArtists = (value, index) => {
           artistsSection.innerHTML+=content;   
       });
     }
-    })
+    }).catch((error) => {
+			console.log(error)
+		})
 }
 
 const seeAllTracks =() => {
@@ -227,5 +233,7 @@ const fetchAllTracks =(value, index) => {
             }
            
           }
+        }).catch((error) => {
+          console.log(error)
         })
 }
