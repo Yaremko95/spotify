@@ -1,0 +1,78 @@
+.main {
+  background-color: #222;
+  color: #fff;
+  min-height: 100vh;
+  position: sticky;
+}
+
+.Navbar div.list-group {
+  position: sticky;
+  top: 1em;
+  height: 90vh !important;
+  font-weight: bold;
+  font-size: large;
+}
+
+div.list-group-item {
+  background-color: black;
+  border: none !important;
+}
+
+.Navbar {
+  background-color: black;
+}
+
+table.table {
+  color: white;
+  font-size: 1.3em;
+  font-weight: 300;
+}
+
+table.table td:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.PlaylistCover img.img-fluid:hover {
+  transform: rotate(1turn);
+  border-radius: 100%;
+  transition-duration: 0.5s;
+}
+
+.PlaylistCover {
+  position: sticky;
+  top: 3em !important;
+  font-weight: 400;
+  font-size: 2em;
+}
+
+.mediaPlayer {
+  position: fixed;
+  bottom: 0;
+  background-color: #333 !important;
+  z-index: 3000;
+  color: white;
+  text-align: center;
+  padding: 10px;
+}
+
+.mediaPlayer .fa-play-circle {
+  font-size: 2em;
+}
+
+.mediaPlayer .fa-play-circle:hover {
+  color: green;
+  transform: rotate(0.7turn);
+}
+
+.mediaPlayer .fa-play-circle:visited {
+  color: green;
+}
+
+.mediaPlayer .progress {
+  height: 5px !important;
+}
+
+.mediaPlayer .progress .progress-bar {
+  background-color: green;
+}

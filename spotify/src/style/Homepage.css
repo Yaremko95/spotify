@@ -1,0 +1,20 @@
+body {
+  background-color: rgb(38, 100, 103);
+  background: linear-gradient(
+      143deg,
+      rgb(15, 68, 95) 0%,
+      rgb(14, 41, 66) 40%,
+      rgba(0, 0, 0, 5) 94%
+    )
+    no-repeat;
+  color: white;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.upBarStyle {
+  margin-left: 20%;
+  margin-right: 20%;
+}
